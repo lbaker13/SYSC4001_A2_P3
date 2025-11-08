@@ -40,7 +40,7 @@ std::tuple<std::string, std::string, int> simulate_trace(std::vector<std::string
 
             execution += std::to_string(current_time) + ", " + std::to_string(delays[duration_intr]) + ", ENDIO ISR(ADD STEPS HERE)\n";
             current_time += delays[duration_intr];
-
+            execution +=  std::to_string(current_time) + ", 0, Scheduler Called\n";
             execution +=  std::to_string(current_time) + ", 1, IRET\n";
             current_time += 1;
         } else if(activity == "FORK") {
